@@ -10,3 +10,7 @@ class CategoriaProdAdmin(admin.ModelAdmin):
 
 class ProductoAdmin(admin.ModelAdmin):
     readonly_fields= "created", "updated"
+
+# Registramos las tablas y las clases
+admin.site.register(CategoriaProd, CategoriaProdAdmin)
+admin.site.register(Producto, ProductoAdmin)
