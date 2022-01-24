@@ -25,6 +25,7 @@ class Carro:
             for key, value in self.carro.items(): # P/cada clave/valor q´tengamos en ntro. carro
                 if key == str(producto.id): # Comp. si la clave se correponde con el id del prod.
                     value["cantidad"]= value["cantidad"]+1 # Incrementar en 1 la cantidad
+                    value["precio"]= float(value["precio"])+producto.precio
                     break
         # Tanto si hay o no prod. esto debe almacenarse en la sesión
         self.guardar_carro()
@@ -46,6 +47,7 @@ class Carro:
         for key, value in self.carro.items():
             if key == str(producto.id):
                 value["cantidad"]= value["cantidad"]-1
+                value["precio"]= float(value["precio"])-producto.precio
                 # Si hay solo 1 prod. que eliminar
                 if value["cantidad"]<1:
                     self.eliminar(producto)
