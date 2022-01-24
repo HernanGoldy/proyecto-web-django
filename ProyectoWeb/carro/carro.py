@@ -12,7 +12,7 @@ class Carro:
     # Agregar productos al carro
     def agregar(self, producto):
         # Si el producto no está en el carro (o no encuentra el id del producto):
-        if str(producto.id) not in self.carro.keys(): #  REVISAR -> () antes de str
+        if (str(producto.id) not in self.carro.keys()):
             self.carro[producto.id]={
                 "producto_id": producto.id,
                 "nombre": producto.nombre,
@@ -39,7 +39,7 @@ class Carro:
         producto.id= str(producto.id)
         if producto.id in self.carro:
             del self.carro["producto.id"]
-            self.guardar_carro()
+        self.guardar_carro()
 
     # Restar unidades de un producto
     def restar_producto(self, producto):
